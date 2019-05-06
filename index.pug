@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title BerYoga
+    link(rel='stylesheet' href='css/style.css')
+  body
+    header(class=['header', 'container'])
+      .logo BerYoga
+      nav.topmenu
+        - var menu = ['Home', 'About Us', 'Contact', 'Pricing'];
+        ul
+          each item in menu
+            li= item
+      button(type='button') Login
