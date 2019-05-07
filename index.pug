@@ -70,45 +70,49 @@ html
             .promo-text
               h4 Access Unlimited
               p Find lots of yoga video tutorials, from all over the world
-    section.description-block
-      .container
-        .section-col
-          img(src='images/yoga-1.png')
-        .section-col
-          h3 What’s on BerYoga?
-          .promo-text
-            h4 New Classes Every Week
-            p
-              | Discover hundreds of classes in our library.
-              | Save your favorites, try new styles and customize your routine to fit your schedule.
-          .promo-text
-            h4 Series
-            p Our multi-class series are designed to help you achieve your fitness and wellness goals.
-          .promo-text
-            h4 Pose Directory
-            p Get step-by-step instructions on poses and sequences in our extensive video pose directory.
-    section
+    section.features-block
       .container
         .section-row
+          .section-col
+            img(src='images/yoga-1.png')
+          .section-col.features
+            h3 What’s on BerYoga?
+            .features-text
+              h4 New Classes Every Week
+              p.base-text
+                | Discover hundreds of classes in our library.
+                | Save your favorites, try new styles and customize your routine to fit your schedule.
+            .features-text
+              h4 Series
+              p.base-text Our multi-class series are designed to help you achieve your fitness and wellness goals.
+            .features-text
+              h4 Pose Directory
+              p.base-text Get step-by-step instructions on poses and sequences in our extensive video pose directory.
+    section.articles-block
+      .container
+        div(class=['section-row', 'articles-top'])
           .article-preview
-            p By Brittany Risherjan _____
+            p.article-author By Brittany Risherjan _____
             h3 The Healing Power of Trauma-Informed Yoga Classes.
-            p
+            p.base-text
               | Celebrating five years of service, the nonprofit Exhale to Inhale brings free,
               | trauma-informed yoga classes to rape crisis centers and domestic violence shelters in Jakarta.
-            a(href='#')
+            a(href='#' class='link-preview')
               = 'Read More >'
-        .section-row
+          img(src='images/the_healing.png')
+        div(class=['section-row', 'articles-bottom'])
+          img(src='images/yoga-2.png')
           .article-preview
             h3 5 Ways to Make Every Yoga Class More Restorative and Therapeutic
-            p
+            p.base-text
               | In part four of our series on teaching trauma-sensitive yoga, teacher Daniel Sernicola shares
               | five practices to help your students get grounded and cultivate mindfulness.
+            p.base-text
               | Teachers, need liability insurance? As a TeachersPlus member, you can access low-cost coverage
               | and more than a dozen valuable benefits that will build your skills and business. Enjoy a free
               | subscription to YJ, a free profile on our national directory, exclusive webinars and content packed
               | with advice, discounts on educational resources and gear, and more
-            a(href='#')
+            a(href='#' class='link-preview')
               = 'Read More >'
     footer.footer
       .container

@@ -74,6 +74,7 @@ a
   color: $main-color
 
 .link-preview
+  display: inline-block
   color: $preview-link-color
   &:hover
     text-decoration: underline
@@ -84,7 +85,7 @@ a
   width: 100%
 
 .header-top
-  padding-top: 100px
+  padding-top: 70px
   justify-content: space-between
 
 .logo
@@ -182,13 +183,16 @@ a
     line-height: 27px
     opacity: 0.65
 
-.description-block
+.features-block
   position: relative
+  margin-bottom: 140px
+  padding-top: 120px
+  overflow: hidden
   &:before
     width: 229px
     height: 377px
     position: absolute
-    top: 40%
+    top: 350px
     left: -60px
     z-index: -1
     content: ''
@@ -199,10 +203,113 @@ a
     width: 300px
     height: 448px
     position: absolute
-    top: 0
+    top: 30px
     right: -90px
     z-index: -1
     content: ''
     background: url("../images/bg_cloud_clear.png") no-repeat
     background-size: cover
     transform: rotate(-23deg)
+
+.features
+  margin-left: 45px
+  & h3
+    margin-top: 30px
+    margin-bottom: 80px
+
+.features-text
+  margin-bottom: 50px
+  margin-left: 71px
+  & h4
+    margin-bottom: 7px
+    &:before
+      content: ''
+      display: inline-block
+      width: 31px
+      height: 24px
+      margin-left: -50px
+      margin-right: 21px
+      background: url("../images/checklist.png") no-repeat
+
+.articles-block
+  position: relative
+  margin-bottom: 145px
+  background: url("../images/bg_cloud_clear.png") no-repeat -120px 50%, url("../images/bg_branch.png") no-repeat 104% 63%
+  overflow: hidden
+  &:before
+    width: 351px
+    height: 445px
+    position: absolute
+    top: 42%
+    right: -90px
+    z-index: -1
+    content: ''
+    background: url("../images/bg_cloud_clear.png") no-repeat
+    background-size: cover
+    transform: rotate(-37deg)
+
+.articles-top
+  margin-top: 150px
+  margin-bottom: 300px
+  & .article-preview
+    width: 550px
+    margin-top: 120px
+    margin-left: 55px
+    margin-right: 130px
+  & h3
+    margin-bottom: 80px
+  & .base-text,
+  & .link-preview
+    margin-left: 55px
+    margin-right: 95px
+  & .link-preview
+    margin-top: 75px
+
+.article-author
+  font-size: $font-size + 2px
+  font-style: oblique
+  line-height: 40px
+  opacity: 0.5
+
+.articles-bottom
+  margin-bottom: 150px
+  & img
+    margin-left: -77px
+  & .article-preview
+    width: 670px
+    margin-top: -29px
+    margin-left: 75px
+  & h3
+    margin-bottom: 90px
+  & .base-text,
+  & .link-preview
+    margin-left: 90px
+  & .base-text
+    text-indent: 55px
+    text-align: justify
+  & .link-preview
+    margin-top: 95px
+
+.footer
+  position: relative
+  background: url("../images/footer_bg.png") no-repeat top center
+  background-size: 130%
+  overflow: hidden
+  &:before
+    width: 204px
+    height: 335px
+    position: absolute
+    top: 40%
+    content: ''
+    background: url("../images/bg_branch.png") no-repeat
+    background-size: cover
+    transform: scale(-1, 1)
+  &:after
+    width: 204px
+    height: 335px
+    position: absolute
+    top: 40%
+    right: 0
+    content: ''
+    background: url("../images/bg_branch.png") no-repeat
+    background-size: cover
