@@ -10,16 +10,16 @@ html
         div(class=['header-row', 'header-top'])
           a(href='index.html' class='logo header-top-lh') BerYoga
           nav(class=['nav-top-menu', 'header-top-lh'])
-            - var menu = ['Home', 'About Us', 'Contact', 'Pricing'];
+            - var menu = [{title: 'Home', link: '#'}, {title: 'About Us', link: '#about'}, {title: 'Contact', link: '#contacts'}, {title: 'Pricing', link: '#prices'}];
             - var currentPage = 'Home';
             ul(class='top-menu')
               each item in menu
                 li.top-menu-item
                   a(
-                    href='#'
+                    href= item.link
                     class=['link', 'top-menu-link']
-                    class= currentPage === item ? 'item-active':''
-                  )= item
+                    class= currentPage === item.title ? 'item-active':''
+                  )= item.title
           button(
             type='button'
             class=['btn', 'btn-primary', 'btn-login']
@@ -46,7 +46,7 @@ html
       .container
         .section-row
           .section-title
-            h3 Why Choose BerYoga?
+            h3#about Why Choose BerYoga?
             p.base-text
               | Access hundreds of online yoga classes shot in natural studios around the world.
               br
@@ -116,44 +116,54 @@ html
               = 'Read More >'
     footer.footer
       .container
-        .section-prices
+        div(id='prices' class='section-prices')
           - var privileges_common = ['Unlimited Access Video', 'Saved Videos', 'Offline Access'];
-          .price-box
-            ul
+          div(class=['price-box', 'price-box-small'])
+            ul.privileges-list
               each privilege in privileges_common
-                li= privilege
+                li.standart-priv= privilege
             .price
-              .currency $
-              .price-value 15
-              .price-period /Mo
+              span.currency $
+              span.price-value 15
+              span.price-period /Mo
             p Billed monthly
-            button(type='button') Become A Member
-          .price-box
+            button(
+            type='button'
+            class=['btn', 'btn-alternate']
+            ) Become A Member
+          div(class=['price-box', 'price-box-big'])
             .best-title Best Seller
-            ul
+            ul.privileges-list
               each privilege in privileges_common
-                li= privilege
+                li.best-seller-priv= privilege
             .price
-              .currency $
-              .price-value 150
-              .price-period /Year
+              span.currency $
+              span.price-value 150
+              span.price-period /Year
             p Biled a one year - Save 45%
-            button(type='button') Become A Member
-          .price-box
+            button(
+            type='button'
+            class=['btn', 'btn-primary']
+            ) Become A Member
+          div(class=['price-box', 'price-box-small'])
+            h4 Yoga Class
             - var privileges_yoga_class = ['Only Yoga Class', 'Unlimited Access Video'];
-            ul
+            ul.privileges-list
               each privilege in privileges_yoga_class
-                li= privilege
+                li.standart-priv= privilege
             .price
-              .currency $
-              .price-value 5
-              .price-period /Mo
+              span.currency $
+              span.price-value 5
+              span.price-period /Mo
             p Billed monthly
-            button(type='button') Become A Member
+            button(
+              type='button'
+              class=['btn', 'btn-alternate']
+            ) Become A Member
         .bottom-menu
           .section-row
             .bottom-menu-col
-              .bottom-menu-title CONTACT us
+              div(id='contacts' class='bottom-menu-title') CONTACT us
               div(class='contacts' itemscope='' itemtype='http://schema.org/Organization')
                 span(itemprop='address')
                   | Beryoga, Jl. Sudirman
@@ -161,27 +171,33 @@ html
                   | no. 129, Tebet
                   br
                   | Jakarta Selatan
+                  br
+                br
                 span(itemprop='email') beryoga@yuk.com
+                br
                 span(itemprop='telephone') 0812 6824 2856 (Main)
                   br
                   | (072) 2673842  (Toll-free)
             .bottom-menu-col
               .bottom-menu-title About us
-                - var about_us_menu = ['Our Mission', 'Our Team', 'Management', 'Policies'];
-                ul
-                  each menuitem in about_us_menu
-                    li= menuitem
+              - var about_us_menu = ['Our Mission', 'Our Team', 'Management', 'Policies'];
+              ul
+                each menuitem in about_us_menu
+                  li
+                    a(href='#' class='link')= menuitem
             .bottom-menu-col
               .bottom-menu-title Our Programs
-                - var our_programms_menu = ['Yoga Class', 'Bikram Yoga', 'Acro Yoga', 'Sveda Yoga', 'Yo Mama'];
-                ul
-                  each menuitem in our_programms_menu
-                    li= menuitem
+              - var our_programms_menu = ['Yoga Class', 'Bikram Yoga', 'Acro Yoga', 'Sveda Yoga', 'Yo Mama'];
+              ul
+                each menuitem in our_programms_menu
+                  li
+                    a(href='#' class='link')= menuitem
             .bottom-menu-col
               .bottom-menu-title support trails
-                - var support_menu = ['Donate', 'Individual Membership', 'Gift membership', 'Hiker Store'];
-                ul
-                  each menuitem in support_menu
-                    li= menuitem
+              - var support_menu = ['Donate', 'Individual Membership', 'Gift membership', 'Hiker Store'];
+              ul
+                each menuitem in support_menu
+                  li
+                    a(href='#' class='link')= menuitem
           .section-row
             p.copy Copyright © 2019 BerYoga All rights reserved.
