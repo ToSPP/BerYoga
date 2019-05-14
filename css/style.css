@@ -152,6 +152,17 @@ a {
   margin-top: 455px;
   margin-bottom: 140px; }
 
+.promo-block,
+.features-block,
+.articles-block {
+  opacity: 0;
+  transform: translateY(0);
+  transition: opacity 1s ease-in-out, transform 0.7s ease-in-out; }
+
+.showed-up {
+  transform: translateY(-50px);
+  opacity: 1; }
+
 .section-title {
   width: 100%;
   margin-bottom: 20px;

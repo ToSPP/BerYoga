@@ -10,15 +10,16 @@ html
         div(class=['header-row', 'header-top'])
           a(href='index.html' class='logo header-top-lh') BerYoga
           nav(class=['nav-top-menu', 'header-top-lh'])
-            - var menu = [{title: 'Home', link: '#'}, {title: 'About Us', link: '#about'}, {title: 'Contact', link: '#contacts'}, {title: 'Pricing', link: '#prices'}];
+            - var menu = [{title: 'Home', link: ''}, {title: 'About Us', link: 'about'}, {title: 'Contact', link: 'contacts'}, {title: 'Pricing', link: 'prices'}];
             - var currentPage = 'Home';
             ul(class='top-menu')
               each item in menu
                 li.top-menu-item
                   a(
-                    href= item.link
+                    href= '#'
                     class=['link', 'top-menu-link']
                     class= currentPage === item.title ? 'item-active':''
+                    data-link= item.link
                   )= item.title
           button(
             type='button'
@@ -201,3 +202,4 @@ html
                     a(href='#' class='link')= menuitem
           .section-row
             p.copy Copyright © 2019 BerYoga All rights reserved.
+    script(src="js/script.js")
